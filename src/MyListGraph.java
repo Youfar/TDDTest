@@ -55,13 +55,13 @@ public class MyListGraph implements MyGraph{
     private int numOfEdges;
 
     public class Vertex {
-        public char label;
+        public int label;
         public boolean wasVisted;
         public int indexId;//顶点的标号
         //由于采用"邻接表"方式表示图,所以每个顶点对象持有一个邻接表adjList
         private ArrayList<Vertex> adjacentList = null;
 
-        public Vertex(char lab) // constructor
+        public Vertex(int lab) // constructor
         {
             this.label = lab;
             this.wasVisted = false;
@@ -91,14 +91,6 @@ public class MyListGraph implements MyGraph{
 
     public MyListGraph() {
         vertexList = new ArrayList<Vertex>();
-    }
-
-    public boolean isDirected() {
-        return this.isDirected;
-    }
-
-    public ArrayList<Vertex> getVertexList() {
-        return vertexList;
     }
 
 

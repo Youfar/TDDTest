@@ -7,17 +7,17 @@ public class UseMyGraph {
 
         int verNum = 10;
         MyListGraph listGraph = new MyListGraph();
-        listGraph.addVertex(listGraph.new Vertex('A'));
-        listGraph.addVertex(listGraph.new Vertex('B'));
-        listGraph.addVertex(listGraph.new Vertex('C'));
-        listGraph.addVertex(listGraph.new Vertex('D'));
-        listGraph.addVertex(listGraph.new Vertex('E'));
-        listGraph.addVertex(listGraph.new Vertex('F'));
-        listGraph.addVertex(listGraph.new Vertex('G'));
-        listGraph.addVertex(listGraph.new Vertex('H'));
-        listGraph.addVertex(listGraph.new Vertex('I'));
-        listGraph.addVertex(listGraph.new Vertex('J'));
-        listGraph.addVertex(listGraph.new Vertex('K'));
+        listGraph.addVertex(listGraph.new Vertex(0));
+        listGraph.addVertex(listGraph.new Vertex(1));
+        listGraph.addVertex(listGraph.new Vertex(2));
+        listGraph.addVertex(listGraph.new Vertex(3));
+        listGraph.addVertex(listGraph.new Vertex(4));
+        listGraph.addVertex(listGraph.new Vertex(5));
+        listGraph.addVertex(listGraph.new Vertex(6));
+        listGraph.addVertex(listGraph.new Vertex(7));
+        listGraph.addVertex(listGraph.new Vertex(8));
+        listGraph.addVertex(listGraph.new Vertex(9));
+        listGraph.addVertex(listGraph.new Vertex(10));
         listGraph.addEdge(0,1);
         listGraph.addEdge(0,4);
         listGraph.addEdge(1,2);
