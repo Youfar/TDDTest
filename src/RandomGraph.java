@@ -74,7 +74,7 @@ public class RandomGraph {
         int E = 10;
 
         MyMatrixGraph matrixRandom0 = new MyMatrixGraph(V);
-        MyMatrixGraph matrixRandom1 = matrixRandom0.matrixRandom(V,E);
+        //MyMatrixGraph matrixRandom1 = matrixRandom0.matrixRandom(V,E);
 
 
     }
