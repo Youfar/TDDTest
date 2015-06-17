@@ -48,7 +48,6 @@ public class MyListGraph implements MyGraph{
     }*/
 
 
-
     private ArrayList<Vertex> vertexList;// 用一个ArrayList保存图中的所有结点
     private boolean isDirected = false;// 标记是否为有向图
     private int nVerts = 0;// 保存总的顶点数
@@ -56,7 +55,8 @@ public class MyListGraph implements MyGraph{
 
     public class Vertex {
         public int label;
-        public boolean wasVisted;
+        //public boolean wasVisted;
+        public boolean isInGraph;
         public int indexId;//顶点的标号
         //由于采用"邻接表"方式表示图,所以每个顶点对象持有一个邻接表adjList
         private ArrayList<Vertex> adjacentList = null;
@@ -64,7 +64,7 @@ public class MyListGraph implements MyGraph{
         public Vertex(int lab) // constructor
         {
             this.label = lab;
-            this.wasVisted = false;
+            //this.wasVisted = false;
         }
 
         // 为节点添加邻接点
@@ -72,6 +72,7 @@ public class MyListGraph implements MyGraph{
             if (adjacentList == null)
                 adjacentList = new ArrayList<Vertex>();
             adjacentList.add(ver);
+            ver.isInGraph = true;
         }
 
         //返回一个顶点的邻接表,在遍历图时需根据邻接表找下一个节点
@@ -101,11 +102,16 @@ public class MyListGraph implements MyGraph{
     }
 
     public void addEdge(int start, int end) {
+        boolean startInGraph, endInGraph;
         vertexList.get(start).addAdj(vertexList.get(end));
         if (!isDirected) {
             vertexList.get(end).addAdj(vertexList.get(start));
         }
         numOfEdges++;
+
+        /*startInGraph = vertexList.contains(start);
+        endInGraph = vertexList.contains(end);
+        System.out.println(startInGraph + ":" + endInGraph);*/
 
     }
 
@@ -134,6 +140,27 @@ public class MyListGraph implements MyGraph{
                 System.out.print(next.get(i).label + " ");
             }
             System.out.println();
+        }
+    }
+
+    //需要传入对象作为参数
+    public boolean isEdge(int v1, int v2){
+        MyListGraph listGraph = new MyListGraph();
+        Vertex ver1 = listGraph.new Vertex(v1);
+        Vertex ver2 = listGraph.new Vertex(v2);
+        boolean b = ver1.adjacentList.contains(ver2);
+        if (b)
+            return false;
+        else
+            return true;
+    }
+
+    //判断顶点在不在图里，在返回假，不在返回真
+    public boolean isVertex(Vertex ver){
+        if (ver.isInGraph == true){
+            return false;
+        } else {
+            return true;
         }
     }
 

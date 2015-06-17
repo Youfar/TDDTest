@@ -50,7 +50,7 @@ public class MyMatrixGraph implements MyGraph{
         }
     }
 
-    public MyMatrixGraph matrixrandom(int V, int E) {
+    /*public MyMatrixGraph matrixrandom(int V, int E) {
         if(E > (long) V*(V-1)/2)
             throw new IllegalArgumentException("too many edges");
         if(E < 0)
@@ -83,7 +83,7 @@ public class MyMatrixGraph implements MyGraph{
         }
         return matrixRandomGraph;
 
-    }
+    }*/
 
 
 

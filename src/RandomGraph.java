@@ -3,7 +3,7 @@
  */
 import java.util.Random;
 public class RandomGraph {
-    /*public MyListGraph listrandom(int V, int E) {
+    /*public static MyListGraph listRandom(int V, int E) {
         if(E > (long) V*(V-1)/2)
             throw new IllegalArgumentException("too many edges");
         if(E < 0)
@@ -14,17 +14,22 @@ public class RandomGraph {
         while(listRandomGraph.getNumOfEdges() < E){
             int v = random.nextInt(V);
             int w = random.nextInt(V);
+
+            boolean b1 = listRandomGraph.isEdge(v, w);
+            boolean b2 = listRandomGraph.isVertex(listRandomGraph.new Vertex(v));
+            boolean b3 = listRandomGraph.isVertex(listRandomGraph.new Vertex(w));
+
             //如果v,w之间没有边,没有点，有一个
-            if((v != w) && ){
+            if((v != w) && b1 && b2 && b3){
                 listRandomGraph.addVertex(listRandomGraph.new Vertex(v));
                 listRandomGraph.addVertex(listRandomGraph.new Vertex(w));
                 listRandomGraph.addEdge(v, w);
             }
-            if((v != w) && ){
+            if((v != w) && b1 && b2){
                 listRandomGraph.addVertex(listRandomGraph.new Vertex(v));
                 listRandomGraph.addEdge(v, w);
             }
-            if((v != w) && ){
+            if((v != w) && b1 && b3){
                 listRandomGraph.addVertex(listRandomGraph.new Vertex(v));
                 listRandomGraph.addEdge(v, w);
             }
@@ -34,7 +39,7 @@ public class RandomGraph {
 
     }*/
 
-    /*public MyMatrixGraph matrixrandom(int V, int E) {
+    public static MyMatrixGraph matrixRandom(int V, int E) {
         if(E > (long) V*(V-1)/2)
             throw new IllegalArgumentException("too many edges");
         if(E < 0)
@@ -67,14 +72,23 @@ public class RandomGraph {
         }
         return matrixRandomGraph;
 
-    }*/
+    }
 
     public static void main(String[] args) {
-        int V = 10;
-        int E = 10;
+        int V = 1000;
+        int E = 1000;
 
-        MyMatrixGraph matrixRandom0 = new MyMatrixGraph(V);
-        //MyMatrixGraph matrixRandom1 = matrixRandom0.matrixRandom(V,E);
+
+        long startTime = System.currentTimeMillis();
+        MyMatrixGraph G = matrixRandom(V, E);
+        long totalTime = System.currentTimeMillis() - startTime;
+        System.out.println("Create by matrix:" +totalTime/1000.0 +"secs.");
+
+        /*startTime = System.currentTimeMillis();
+        MyListGraph G1 = listRandom(V, E);
+        totalTime = System.currentTimeMillis() - startTime;
+        System.out.println("Create by list:" +totalTime/1000.0 +"secs.");*/
+
 
 
     }

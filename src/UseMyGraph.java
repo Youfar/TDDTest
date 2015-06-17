@@ -6,6 +6,7 @@ public class UseMyGraph {
     public static void main(String[] args) {
 
         int verNum = 10;
+        boolean b;
         MyListGraph listGraph = new MyListGraph();
         listGraph.addVertex(listGraph.new Vertex(0));
         listGraph.addVertex(listGraph.new Vertex(1));
@@ -28,9 +29,11 @@ public class UseMyGraph {
         listGraph.addEdge(6,7);
         listGraph.addEdge(7,8);
         listGraph.addEdge(8,9);
+        b = listGraph.isEdge(0,1);
+        System.out.println(b);
         listGraph.displayGraph();
 
-        int node = 4, edge = 4;
+        /*int node = 4, edge = 4;
         String labels[] = {"V1","V2","V3","V4"};
         MyMatrixGraph matrixGraph = new MyMatrixGraph(node);
         for(String label:labels){
@@ -44,7 +47,7 @@ public class UseMyGraph {
         matrixGraph.addEdge(3, 1);
 
         System.out.println("结点个数是 " + matrixGraph.getNumOfVertex());
-        System.out.println("边的个数是 " + matrixGraph.getNumOfEdges());
+        System.out.println("边的个数是 " + matrixGraph.getNumOfEdges());*/
 
 
 
